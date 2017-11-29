@@ -1,16 +1,19 @@
 pipeline {
-    agent { label 'master' }
+    agent any
     stages {
-       stage('build') {
-          steps {
-             bat 'echo step1'
-             bat 'echo step2'
-             bat '''
-                echo 'Multiline'
-                echo 'Example'
-             '''
-             echo 'not using shell'
-          }
-       }
-    }
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Sadashiva555/Shiva.git'
+            }
+        }
+        
+       stage('Build') {
+            steps {
+                
+                   sh 'mvn clean compile'
+                
+           }
+        }
+        
+   }
 }
