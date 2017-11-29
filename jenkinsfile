@@ -1,19 +1,6 @@
-pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Sadashiva555/Shiva.git'
-            }
-        }
-        
-       stage('Build') {
-            steps {
-                
-                   sh 'mvn clean compile'
-                
-           }
-        }
-        
-   }
+stage('Build') {
+    // some block
+}
+stage('Test') {
+    // some block
 }
