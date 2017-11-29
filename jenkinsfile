@@ -1,23 +1,16 @@
-#!/usr/bin/env groovy
 pipeline {
-    agent shiva
-
+    agent { label 'master' }
     stages {
-        stage('Build') { 
-            steps { 
-                sh 'make' 
-            }
-        }
-        stage('Test'){
-            steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'make publish'
-            }
-        }
+       stage('build') {
+          steps {
+             bat 'echo step1'
+             bat 'echo step2'
+             bat '''
+                echo 'Multiline'
+                echo 'Example'
+             '''
+             echo 'not using shell'
+          }
+       }
     }
 }
