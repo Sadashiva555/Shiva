@@ -1,6 +1,8 @@
-stage('Build') {
-    // some block
-}
-stage('Test') {
-    // some block
-}
+node {
+  stage 'build'
+  echo 'hello world'
+  stage 'test'
+  echo 'hello veridic'
+  stage 'Deploy'
+  echo 'hello Atlanta'
+ }
