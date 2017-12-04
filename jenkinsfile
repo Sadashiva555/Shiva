@@ -4,5 +4,5 @@ node {
   stage 'test'
   echo 'hello veridic'
   stage 'Deploy'
-  echo 'hello Atlanta'
+  echo 'hello Georgia'
  }
